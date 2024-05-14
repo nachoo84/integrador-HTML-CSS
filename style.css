@@ -1,0 +1,403 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+/*     reset   */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  font-family: "Montserrat";
+}
+
+/*  variables   */
+*:root {
+  --first-text: #000;
+  --gray: #3d3d3d;
+  --gray-opaco: #3d3d3dce;
+  --dark-bg: #181818;
+  --secondary-bg: #1e1e1e;
+  --white: #fff;
+  --light-text: #fff;
+  --cheddar: rgb(255, 123, 0);
+  --marron: rgb(37, 8, 8);
+
+  /* fuentes */
+  --font: "Montserrat", sans-serif;
+  --light: 400;
+  --medium: 500;
+  --bold: 800;
+}
+
+body {
+  /*background: url(./img/fondobody.jpg) repeat center;*/
+  background-color: var(--marron);
+  color: var(--light-text);
+  font-family: var(--font);
+  overflow-x: hidden;
+  width: 100%;
+}
+
+a {
+  color: var(--light-text);
+}
+
+/*  navbar    */
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 1rem;
+  z-index: 2;
+  background-color: var(--dark-bg);
+}
+
+.logo {
+  width: 130px;
+}
+
+.menu {
+  padding: 15px 5px;
+  display: flex;
+  order: 3;
+  width: 100%;
+  flex-direction: column;
+  gap: 30px;
+  transform: translate(200%);
+  transition: all 0.5s ease-in-out;
+  background: linear-gradient(to bottom, #121e3c, #6c6d6e);
+}
+
+.menu li {
+  border-bottom: 1px solid var(--white);
+  color: var(--gray);
+}
+.btn-container {
+  display: flex;
+  align-items: center;
+
+  gap: 20px;
+}
+
+.btn-login {
+  background-color: var(--cheddar);
+  padding: 0.5rem 0.5rem;
+  border-radius: 5px;
+}
+
+.show {
+  transform: translate(0);
+}
+.navbar-list li:first-child > a {
+  color: var(--gray);
+}
+.navbar,
+.navbar-list {
+  color: var(--gray);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  gap: 30px;
+}
+#menu-toggle,
+.menu-label {
+  display: none;
+}
+.navbar-list li a {
+  transition: color 0.3s ease;
+}
+.navbar-list li a:hover {
+  color: var(--cheddar);
+}
+
+/* ---------------------MEDIA QUERIES 550px ----------------*/
+@media (max-width: 550px) {
+  body {
+    overflow-x: hidden;
+  }
+  .navbar-list {
+    position: absolute;
+    z-index: 1;
+    top: 80px;
+    left: 20%;
+    right: 0;
+    width: 80%;
+    background: #000000;
+    border: 2px solid var(--cheddar);
+    border-top: 0;
+    border-right: 0;
+    font-size: 14px;
+  }
+  .menu-label {
+    display: flex;
+  }
+  .menu-label img {
+    height: 20px;
+    width: 20px;
+  }
+  #menu-toggle:checked + .navbar-list {
+    display: flex;
+  }
+  .navbar-list {
+    transform: translate(110%);
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+  }
+  #menu-toggle:checked + .navbar-list {
+    display: flex;
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  .card-contenedor {
+    flex-direction: column;
+  }
+  footer {
+    flex-direction: column;
+  }
+
+  .form {
+    width: 70%;
+  }
+  .form h1 {
+    font-size: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+  }
+  .contenedor-conoce {
+    display: flex;
+    flex-direction: column;
+  }
+  .contenedor-conoce img {
+    width: 380px;
+    border-radius: 1rem;
+  }
+  .contenedor-conocenos h1 {
+    padding: 0 20px;
+    display: flex;
+    text-align: center;
+  }
+  .contenedor-conoce iframe {
+    width: 380px;
+    border-radius: 1rem;
+  }
+  .ajuste-conocenosindex {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 433px) {
+  .navbar-list {
+    flex-direction: column;
+    left: 50%;
+    top: 80px;
+    width: 50%;
+  }
+}
+
+/* section 1  hero */
+.hero {
+  background: url(./img/hero/burger-hero.jpg) center/cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 100%;
+  gap: 4px;
+  padding: 4rem;
+}
+/*
+.hero-bg {
+  max-width: 60%;
+}
+*/
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 20px;
+  max-width: 550px;
+}
+
+.hero-text h1 {
+  font-size: 2.1rem;
+  text-shadow: 0px 3px 9px rgba(0, 0, 0, 0.82);
+}
+
+.btn {
+  background-color: var(--cheddar);
+  color: var(--light-text);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 9px;
+}
+.btn:hover {
+  background-color: #f7b792;
+  color: var(--first-text);
+}
+/* --------------section 2 PRODUCTO -----*/
+p {
+  text-align: center;
+}
+.main {
+  max-width: 100vw;
+}
+.producto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  align-content: center;
+
+  gap: 20px;
+}
+.producto h1 {
+  padding-top: 25px;
+}
+
+.card-contenedor {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  max-width: 1000px;
+  flex-wrap: wrap;
+  padding-bottom: 35px;
+}
+.card-producto {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  gap: 5px;
+}
+.card_texto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  gap: 10px;
+}
+.card_texto p {
+  font-size: 11px;
+}
+.img-card-burger {
+  display: flex;
+  width: 150px;
+}
+.img-card-burger:hover {
+  width: 152px;
+}
+
+/* ----SECTION 3 ABOUT ----- PEDIDO*/
+.about {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 35px;
+}
+/* ---------- section conocenos*/
+.contenedor-conocenos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.contenedor-conocenos h1 {
+  margin-top: 35px;
+  font-size: 2rem;
+}
+.ajuste-conocenosindex {
+  display: flex;
+  gap: 15px;
+  border-radius: 1rem;
+}
+.contenedor-conocenos h3 {
+  padding-top: 40px;
+  color: var(--cheddar);
+}
+.contenedor-conoce {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  padding: 20px 0px;
+}
+.img-conocenos {
+  height: 300px;
+}
+
+/*------------footer *-----------*/
+
+footer {
+  display: flex;
+  justify-content: space-around;
+
+  gap: 15px;
+  padding: 1.2rem 1.2rem;
+  margin: 0 auto;
+  background-color: var(--cheddar);
+}
+.redes-nav {
+  display: flex;
+  gap: 10px;
+}
+.footer-nav li {
+  font-size: 10px;
+}
+
+/*----------------------------REGISTRATE FORM------------------*/
+.contenedor-form {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  background: url(./img/form/burger-registro.jpg) repeat center;
+  margin: 10px 0;
+}
+.form-registro {
+  width: 50%;
+  margin: 15px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
+  align-items: center;
+  background-color: var(--gray-opaco);
+  border-radius: 2rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  width: 95%;
+  padding: 0 10px;
+}
+
+.form button {
+  margin: 15px 0;
+}
+
+.form h1 {
+  padding-top: 25px;
+  color: var(--cheddar);
+}
+
+.label-p {
+  font-size: 12px;
+}
